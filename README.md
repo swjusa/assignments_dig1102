@@ -1,2 +1,2 @@
-assignments
+var assignments = "assignments";
 ===========
