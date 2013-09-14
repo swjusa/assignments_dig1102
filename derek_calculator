@@ -1,0 +1,17 @@
+var calc = function(n1, n2, op) {
+    /*op = toString(op);*/
+    if (op === '+') {
+        return n1 + n2;
+    } else if (op === "-") {
+        return n1 - n2;
+    } else if (op === "*") {
+        return n1 * n2;
+    } else if (op === "/") {
+        return n1 / n2;
+    } else {
+        return "Hey, you have to enter the third variable as a string that is either *, -, +, or /.";
+    }
+};
+
+calc(2, 3, '+'); /* 5 */
+calc(5, 4, '*'); /* 20 */
