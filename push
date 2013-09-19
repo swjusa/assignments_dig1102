@@ -1,0 +1,6 @@
+How to commit your files;
+
+git .add
+git .commit -n
+git push origin master
+
