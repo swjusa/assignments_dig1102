@@ -5,8 +5,9 @@
   
     <body>
         <script language="javascript">
-          alert
+          window.alert("Welcome to our scripted web page!")
+        </script>
           
           
           
-          //finish the alert statement and close the script, body and html tags.
+          //finish and close the body and html tags.
