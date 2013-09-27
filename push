@@ -1,0 +1,6 @@
+How to commit your files;
+
+git add .
+git commit -m "type message"
+git push -u origin master
+
