@@ -75,7 +75,7 @@ Number Two:
 
 <INPUT TYPE = Button VALUE = "Yellow Background" Onclick = "document.bgColor = 'Yellow'">
 
-<p><b><center>Written by Gheter</center></b></p>
+<p><b><center>Updated by Spencer Johnson</center></b></p>
 
 
 
