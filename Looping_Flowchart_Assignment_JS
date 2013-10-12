@@ -1,0 +1,50 @@
+```
+ // This is a tower of terrible hacks.
+  // Replace Spark annotations <$...> ... </$...> with HTML comments, and
+  // space out the comments on their own lines.  This keeps them from
+  // interfering with Markdown's paragraph parsing.
+  // Really, running Markdown multiple times on the same string is just a
+  // bad idea.
+  input = input.replace(/<(\/?\$.*?)>/g, '<!--$1-->');
+  input = input.replace(/<!--.*?-->/g, '\n\n$&\n\n');
+
+  var hashedBlocks = {};
+  var numHashedBlocks = 0;
+
+  var nestedTags = [];
+  while (idx < input.length) {
+    var blockTag = rcall(rOpenBlockTag, false);
+    if (blockTag) {
+      nestedTags.push(blockTag);
+      while (nestedTags.length) {
+        var tag = rcall(rTag, true);
+        if (! tag) {
+          throw new Error("Expected </"+nestedTags[nestedTags.length-1]+
+                          "> but found end of string");
+        } else if (tag.charAt(0) === '/') {
+          // close tag
+          var tagToPop = tag.substring(1);
+          var tagPopped = nestedTags.pop();
+          if (tagPopped !== tagToPop)
+            throw new Error(("Mismatched close tag, expected </"+tagPopped+
+                             "> but found </"+tagToPop+">: "+
+                             input.substr(idx-50,50)+"{HERE}"+
+                             input.substr(idx,50)).replace(/\n/g,'\\n'));
+        } else {
+          // open tag
+          nestedTags.push(tag);
+        }
+      }
+      var newBlock = blockBuf.join('');
+      var openTagFinish = newBlock.indexOf('>') + 1;
+      var closeTagLoc = newBlock.lastIndexOf('<');
+
+      var key = ++numHashedBlocks;
+      hashedBlocks[key] = newBlock.slice(openTagFinish, closeTagLoc);
+      newParts.push(newBlock.slice(0, openTagFinish),
+                    '!!!!HTML:'+key+'!!!!',
+                    newBlock.slice(closeTagLoc));
+      blockBuf.length = 0;
+    }
+  }
+```

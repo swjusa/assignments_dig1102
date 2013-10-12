@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function smallImg(x)
+{
+x.style.height="304px";
+x.style.width="300px";
+}
+
+function normalImg(x)
+{
+x.style.height="610px";
+x.style.width="600px";
+}
+</script>
+</head>
+<body>
+
+<img onmouseover="smallImg(this)" onmouseout="normalImg(this)" border="0" src="Spencer_Asheville_NC.JPG" alt="Spencer in Asheville NC" width="600" height="610">
+
+<p>The function smallImg() is triggered when the user moves the mouse pointer over the image.</p>
+<p>The function normalImg() is triggered when the mouse pointer is moved out of the image.</p>
+
+</body>
+</html>
