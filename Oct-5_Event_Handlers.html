@@ -1,0 +1,24 @@
+<html>
+    <head>
+    <title>Event Handlers</title> 
+    <script LANGUAGE="javascript">
+            
+        function valid(form){
+            var input=0;
+            input=document.myform.data.value;
+            if(input<0){
+        alert("Please input a value that is more than 0");
+        }
+    }
+    </script>
+    </head>
+<body>
+    <h3> Example of onBlur Event Handler</h3>
+    <p>Try inputting a value les than zero:</p><br>
+    
+    <form name="myform">
+        <input type ="text" name="data" value ="" size = 10 onBlur="valid(this.form)">
+    </form>
+    
+</body>    
+</html>
