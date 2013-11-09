@@ -1,0 +1,61 @@
+c.log --   (was not able to find anything????)
+console.log -- Prints text to the console. Useful for debugging
+
+    EX. console.log('Poker night!);
+    
+invocations-invoke -- Invoking Functions
+            The JavaScript code that makes up the body of a function is not executed when the function is defined but when it is invoked. JavaScript functions can be invoked in four ways:
+
+            as functions,
+            as methods,
+            as constructors, and
+            indirectly through their call() and apply() methods.
+            Function Invocation
+            Functions are invoked as functions or as methods with an invocation expression (Invocation Expressions). An invocation expression consists of a function expression 
+            that evaluates to a function object followed by an open parenthesis, a comma-separated list of zero or more argument expressions, and a close parenthesis. If the 
+            function expression is a property-access expression—if the function is the property of an object or an element of an array—then it is a method invocation expression. 
+            That case will be explained below. The following code includes a number of regular function invocation expressions:
+
+    EX. printprops({x:1});                                 
+        var total = distance(0,0,2,1) + distance(2,1,3,5); 
+        var probability = factorial(5)/factorial(13);
+            
+            In an invocation, each argument expression (the ones between the parentheses) is evaluated, and the resulting values become the arguments to the function. These values are assigned to 
+            the parameters named in the function definition. In the body of the function, a reference to a parameter evaluates to the corresponding argument value.
+            
+            For regular function invocation, the return value of the function becomes the value of the invocation expression. If the function returns because the interpreter reaches the end, the 
+            return value is undefined. If the function returns because the interpreter executes a return, the return value is the value of the expression that follows the return or undefined 
+            if the return statement has no value.
+            
+            For function invocation in ECMAScript 3 and nonstrict ECMAScript 5, the invocation context (the this value) is the global object. In strict mode, however, the invocation context is undefined.
+            
+            Functions written to be invoked as functions do not typically use the this keyword at all. It can be used, however, to determine whether strict mode is in effect:
+            
+            // Define and invoke a function to determine if we're in strict mode.
+            var strict = (function() { return !this; }());
+            grunt
+            refactoring
+            assert
+functions -- A function is a JavaScript procedure—a set of statements that performs a task or calculates a value.
+            It is like a reusable piece of code. Imagine , having 20 for loops ,and then having a single function to handle it all .    
+            To use a function, you must define it somewhere in the scope from which you wish to call it. A function definition 
+            (also called a function declaration) consists of the function keyword, followed by the name of the function, a list of  
+            arguments to the function, enclosed in parentheses and separated by commas, the JavaScript statements that define the 
+            function, enclosed in curly braces, { }.
+            
+    EX. function greet(name) {
+        return "Hello" + name + "!";
+        }   
+        
+Grunt --  The Grunt ecosystem is huge and it's growing every day. With literally hundreds of plugins to choose from, you can use Grunt to automate just about anything with a minimum of effort. 
+        If someone hasn't already built what you need, authoring and publishing your own Grunt plugin to npm is a breeze.
+
+Refactoring -- Improving the design of code without changing its extenal behavior. Enables you to go faster.  Makes code clearer to other people, not machines. Writes code that humans can read 
+            instead of code that machine can read.
+
+Pass function --  pass a function into another function as a parameter?
+
+Comparisons --  Are used to test for true or false. Comparison operators are used in logical statements to determine equality or difference between variables or values.
+                Comparison operators can be used in conditional statements to compare values and take action depending on the result:
+
+    EX. if (age<18) x="Too young";
