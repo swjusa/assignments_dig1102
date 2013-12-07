@@ -207,6 +207,7 @@ h2 {
 
 h3 {
   font-family: "Ruluko", serif;
+  font-weight: bold;
 }
 
 .sequence-next,
@@ -231,7 +232,7 @@ h3 {
 }
 
 .title {
-  font-size: 3.4em;
+  font-size: 3.5em;
   left: 65%;
   width: 35%;
   opacity: 0;
@@ -260,11 +261,12 @@ h3 {
 }
 
 .subtitle {
-  color: black;
-  font-size: 2em;
+  color: yellow;
+  font-size: 5.0em;
   left: 35%;
   width: 35%;
   opacity: 0;
+  z-index: 50;
   top: 101%;
 }
 
@@ -293,12 +295,12 @@ h3 {
   bottom: -48%;
   opacity: 0;
   position: relative;
-  height: auto !important;
-  max-height: 568px !important;
-  width: 30%;
-  min-width: 225px;
+  height: auto;
+  /*max-height: 568px !important;*/
+  width: auto;
+  /*min-width: 225px;
   /* prevents the model from shrinking when the browser is resized */
-  max-width: 266px;
+  /*max-width: 266px;*/
 }
 
 .animate-in .model {
@@ -321,7 +323,7 @@ h3 {
   transition-duration: 0.5s;
 }
 
-@media only screen and (min-width: 992px) {
+/*@media only screen and (min-width: 992px) {
   #sequence .title {
     width: 42%;
   }
@@ -360,7 +362,7 @@ h3 {
     left: 50%;
     min-width: 40%;
     /*prevents the model from shrinking when the browser is resized*/
-    width: 40%;
+   /* width: 40%;
   }
   #sequence .animate-in .model {
     left: 50%;
@@ -425,7 +427,7 @@ h3 {
 }
 @media only screen and (max-width: 320px) and (orientation: portrait) {
   /*iphone portrait*/
-  #sequence {
+ /* #sequence {
     height: 320px;
   }
   #sequence .model {
